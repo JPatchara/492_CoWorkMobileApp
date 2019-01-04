@@ -1,0 +1,98 @@
+html
+	head
+		meta(name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0,maximum-scale=1, minimum-scale=1,")
+		link(href='/css/listdetail_page.css', rel='stylesheet')
+		script(type='text/javascript', src="/lib/jquery-1.4.2.min.js")
+		script(type="text/javascript", src="/lib/jquery.touchSwipe.min.js")
+		script(type='text/javascript', src='/lib/angular/angular.min.js')
+		script(src="https://www.gstatic.com/firebasejs/3.7.2/firebase.js")
+		script(type='text/javascript', src='firebase.js')
+		script(type='text/javascript', src='/ShowListDetail.js')
+		script(type='text/javascript', src='/logout.js')
+		script(type='text/javascript', src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyAaWrl60y9TaLrlteFd9ERgOCHSyq6uydA&sensor=false")
+		script(type='text/javascript').
+			localStorage.setItem("Page","/listdetail_page");
+			console.log(localStorage.getItem("Page"));
+			var stage = localStorage.getItem("Page");
+			var user = localStorage.getItem("Username");
+			var status = navigator.onLine;
+			var userRef = firebase.database().ref("User");
+			console.log(status);
+			if(status == 'true') {
+				userRef.orderByChild("UserName").equalTo(user).on('value', function(snapshot) {
+					snapshot.forEach(function (childSnapshot) {
+						userkey = childSnapshot.key;
+						return true;
+				    });
+				    var statusRef = firebase.database().ref("User/"+userkey);
+					statusRef.update({
+						Status: "online"
+					});
+				});
+			} else {
+				userRef.orderByChild("UserName").equalTo(user).on('value', function(snapshot) {
+					snapshot.forEach(function (childSnapshot) {
+						userkey = childSnapshot.key;
+						return true;
+				    });
+				    var statusRef = firebase.database().ref("User/"+userkey);
+					statusRef.update({
+						Status: "offline"
+					});
+				});
+			}
+	body		
+	form(name='listdetail', method='POST', action='/listdetail_page')
+	div(id='modalBG')
+	div(class='container')
+		ul(class='groupHead')
+			li
+				a(href='/list_page')
+					img(id='goback' src='/img/lessthan.png')
+				h1 Group Name
+		h2 Work list name:
+			div(contenteditable='false', id='wlname')
+		h3 Work list description:
+			div(contenteditable='false', id='wldct')
+		div(id='Date') Date:
+			textarea(readonly id='dateValue')
+		h4 Start time:
+			textarea(readonly id='stime')
+		h5 End time:
+			textarea(readonly id='etime')
+		h6 Person in charge: <br>
+			textarea(readonly id='pic')
+		section(id='ImageArea')
+			img(id='showImg')
+		div(id='sidebar')
+			ul
+				li(id='header')
+					a(href='/profile_page') &nbsp;
+						h1(id='Username')
+						div(id='profileImg')
+						//img(id='profile' src='/img/member.png')
+				li
+					a(href='/activity_page')
+						h2 Activity
+						img(id='actIcon' src='/img/activity.png')
+				li
+					a(href='/setting_page')
+						h2 Setting
+						img(id='setIcon' src='/img/setting.png')
+				li
+					a(href='/about_page')
+						h2 About
+						img(id='aboutIcon' src='/img/about.png')
+				li
+					a(href='/help_page')
+						h2 Help
+						img(id='helpIcon' src='/img/help.png')
+				li(onclick='Logout()')
+					a
+						h2 Logout
+						img(id='logoutIcon' src='/img/logout.png')
+				li(id='footer' onclick='Exits()')
+					a 
+						h3 Exit
+						img(id='exitIcon' src='/img/exit.png')
+		div(class='swipe-area')

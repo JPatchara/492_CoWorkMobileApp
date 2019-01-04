@@ -1,0 +1,18 @@
+html
+	head
+		meta(name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0,maximum-scale=1, minimum-scale=1,")
+		link(href='/css/daydetail_page.css', rel='stylesheet')
+	body		
+	form(name='daydetail', method='POST', action='/daydetail_page')
+		ul(class='groupHead')
+			li
+				a(href='/calendar_page')
+					img(id='goback' src='/img/lessthan.png')
+				h1 Calendar
+		h2 12&ensp;June&ensp;2017
+		h3 Work name:
+			div(id='workName') &nbsp;Special Meeting
+		h4 Time:
+			div(id='Time') &nbsp;13.00PM - 16.00PM
+		h5 Person in charge:
+			div(id='PIC') &nbsp;Patchara

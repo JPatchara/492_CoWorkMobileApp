@@ -1,0 +1,19 @@
+html
+	head
+		meta(name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0,maximum-scale=1, minimum-scale=1,")
+		link(href='/css/calendardetail_page.css', rel='stylesheet')
+	body		
+	form(name='calendardetail', method='POST', action='/calendardetail_page')
+		ul(class='groupHead')
+			li
+				a(href='/calendar_page')
+					img(id='goback' src='/img/lessthan.png')
+				h1 Calendar
+		h2 12&ensp;June&ensp;2017
+		h3 Work name
+			input(type='text' id='workName')
+		h4 Start time&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; End time
+			input(type='time' id='startTime' placeholder='00:00')
+			input(type='time' id='endTime' placeholder='00:00')
+		h5 Person in charge
+			select(id='PIC')

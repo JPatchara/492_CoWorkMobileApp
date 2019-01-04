@@ -1,0 +1,458 @@
+body
+    background-color: #ffcc00
+h1
+    position: fixed
+    margin: 0 auto
+    font-family: Calibri
+    font-size: 8vw
+    left: 17vw
+    top: 1.5vh
+    color: #000000
+h2
+    margin: 0 auto
+    font-family: Calibri
+    font-size: 7vw
+    left: 5vw
+    top: 11vh
+    color: #000000
+    position: fixed
+ul.groupHead 
+	position: fixed
+	list-style-type: none
+	top: -2.44vh
+	left: 0
+	z-index: 1
+	width: 100%
+	height: 9%
+	overflow: hidden
+	background-color: #ffffff
+ul.groupHead li
+	float: left
+ul.groupHead li a
+	display: inline-block
+    text-align: center
+    padding: 4.2vw 10.62vw
+    text-decoration: none
+    transition: 0.3s
+.groupHeadcontent 
+    display: none
+    padding: 5vw 5vw
+    border-top: none
+ul.tab
+    list-style-type: none
+    position: fixed
+    margin: 0
+    padding: 0
+    bottom: 0
+    left: 0
+    right: 0
+    width: 100%
+    z-index: 1
+    overflow: hidden
+    border-bottom: none
+    border-left: none
+    border-right: none
+    background-color: #ffffff
+ul.tab li 
+    float: left
+ul.tab li a 
+    display: inline-block
+    color: black
+    text-align: center
+    padding: 9vw 7vw
+    text-decoration: none
+    transition: 0.3s
+.tabcontent 
+    display: none
+    padding: 5vw 5vw
+    border: 1vw solid #FF8C00
+    border-top: none
+#goback
+    position: fixed
+    top: 2.5vh
+    left: 5vw
+    width: 5vw
+    height: 4vh
+#footerTab
+    width: 11vw
+    height: 5.5vh
+#chatRoom
+    position: fixed
+    background-color: #ffffff
+    border: 1vw solid #DCDCDC
+    top: 17vh
+    left: 4.5vw
+    width: 90vw
+    height: 58vh
+#chatArea
+    position: fixed
+    background: transparent
+    top: 19vh
+    left: 5.5vw
+    width: 89.5vw
+    height: 56.2vh
+    overflow-y: scroll
+#chatInput
+    position: fixed
+    background-color: #ffffff
+    border: 1vw solid #000000
+    //border-top: 1vw solid #000000
+    top: 75.5vh
+    left: 4.5vw
+    width: 90vw
+    height: 7vh
+    border-bottom-right-radius: 3vw
+    border-bottom-left-radius: 3vw
+#MessageBox
+    position: absolute
+    left: 1vw
+    top: 0.5vh
+    width: 70vw
+    height: 6vh
+    border-right: 1vw solid #000000
+    font-family: Sans-Serif
+    font-size: 4vw
+#SendBTN
+    position: absolute
+    border-top-right-radius: 3vw
+    border-bottom-right-radius: 3vw
+    right: 1vw
+    top: 0.5vh
+    width: 18vw
+    height: 6vh
+    background-color: #337ab7
+    font-family: Sans-Serif
+    font-size: 4vw
+    color: #ffffff
+    border: 1vw solid #2e6da4
+#myMsg
+    display: flex
+#myMsgName
+    position: absolute
+    max-width: 20vw
+    right: 2vw
+    font-family: Sans-Serif
+    font-size: 4vw
+    overflow: hidden
+    text-overflow: clip
+#myMsgText
+    //background-color: #339ab7
+    background-color: rgba(51, 154, 183, 0.4)
+    position: relative
+    word-wrap: break-word
+    max-width: 55vw
+    right: 22vw
+    font-family: Sans-Serif
+    font-size: 4vw
+    margin-left: auto
+#otherMsg
+    display: flex
+#otherMsgName
+    position: absolute
+    left: 2vw
+    font-family: Sans-Serif
+    font-size: 4vw
+    max-width: 20vw
+    overflow: hidden
+    text-overflow: clip
+#otherMsgText
+    //background-color: #ADFF2F
+    background-color: rgba(173, 255, 47, 0.4)
+    position: relative
+    left: 21.5vw
+    font-family: Sans-Serif
+    font-size: 4vw
+    max-width: 55vw
+    word-wrap: break-word
+.container
+    position: relative
+    background-color: #ffcc00
+    height: 96vh
+    width: 100vw
+    left: 0vw
+    -webkit-transition:  left 0.4s ease-in-out
+    -moz-transition:  left 0.4s ease-in-out
+    -ms-transition:  left 0.4s ease-in-out
+    -o-transition:  left 0.4s ease-in-out
+    transition:  left 0.4s ease-in-out
+.container.open-sidebar 
+    left: 76vw 
+.swipe-area
+    position: absolute
+    width: 5vw
+    left: -2.5vw
+    top: -2vh
+    height: 100vh
+    background: transparent
+    z-index: 2
+#sidebar
+    background: #ffffff
+    position: absolute
+    width: 76vw
+    height: 100vh
+    left: -79vw
+    top: -1.2vh
+    z-index: 2
+    box-sizing: border-box
+    -moz-box-sizing: border-box
+#sidebar ul
+    margin: 0
+    padding: 0
+    list-style: none
+#sidebar ul li
+    margin: 0
+#sidebar ul li a
+    padding: 3.65vw 8vw
+    color: black
+    text-decoration: none
+    display: block
+    border: none
+    -webkit-transition:  background 0.3s ease-in-out
+    -moz-transition:  background 0.3s ease-in-out
+    -ms-transition:  background 0.3s ease-in-out
+    -o-transition:  background 0.3s ease-in-out
+    transition:  background 0.3s ease-in-out
+#sidebar ul li:hover a
+    background: #C9223D
+#sidebar ul li a h1
+    position: relative
+    margin: 0 auto
+    font-family: Calibri
+    font-size: 8vw
+    left: 11vw
+    top: 2.8vh
+    color: #000000
+    max-width: 40vw
+    overflow: hidden
+#sidebar ul li a h2
+    position: relative
+    margin: 0 auto
+    font-family: Calibri
+    font-size: 6vw
+    left: 10vw
+    top: 1.6vh
+    color: #000000
+#sidebar ul li a h3
+    position: relative
+    margin: 0 auto
+    font-family: Calibri
+    font-size: 6vw
+    left: 11vw
+    top: 4.5vh
+    color: #000000
+#profile
+    position: relative
+    top: -5vh
+    width: 18vw
+    height: 10vh
+#profileImg
+    position: relative
+    top: -5vh
+    width: 18vw
+    height: 10vh
+    z-index: 1
+    border: none
+    border-radius: 50vw
+    background-image: url('')
+    background-size: cover
+    background-position: center
+    border: 0.3vw solid #bbb
+    border-radius: 50vw
+#actIcon
+    position: relative
+    top: -2.5vh
+    left: -1.4vw
+    width: 7.5vw
+    height: 4.1vh
+#setIcon
+    position: relative
+    top: -2.5vh
+    left: -1.4vw
+    width: 7.5vw
+    height: 4.1vh
+#aboutIcon
+    position: relative
+    top: -2.5vh
+    left: -1.4vw
+    width: 7.5vw
+    height: 4.1vh
+#helpIcon
+    position: relative
+    top: -2.5vh
+    left: -1.4vw
+    width: 7.5vw
+    height: 4.1vh
+#logoutIcon
+    position: relative
+    top: -2.5vh
+    left: -1.4vw
+    width: 7.5vw
+    height: 4.4vh
+#exitIcon
+    position: relative
+    top: -0.5vh
+    left: -3.5vw
+    width: 11vw
+    height: 6vh
+#header
+    height: 19.5vh
+    border-bottom: 0.3vw solid #000000
+#beforeFooter
+    border: none
+    height: 5vh
+#footer
+    height: 12.5vh
+    border-top: 0.3vw solid #000000
+#TBox
+    position: absolute
+    z-index: 1
+    background: transparent
+    overflow-y: scroll
+    left: 1vw
+    top: 0.45vh
+    width: 68.5vw
+    height: 5.5vh
+    border-right: 1vw solid #000000
+    font-family: Sans-Serif
+    font-size: 4vw
+#BTN
+    position: relative
+    bottom: -4vh
+    left: 40.5vw
+    width: 18vw
+    height: 4vh
+    border-radius: 2vw
+    border: 0.6vw solid #000000
+    background-color: #188412
+    z-index: -1
+#BTN a
+    color: #ffffff
+    font-family: Sans-serif
+    font-size: 5vw
+    font-weight: bold
+    position: relative
+    left: 5.5vw
+    top: 0.5vh
+    text-align: center
+#p2
+    width: 80%
+    z-index: -1
+#maps, #map_canvas
+    height: 70vh
+    width: 80vw
+    left: 8vw
+    top: 12vh
+    z-index: -1
+#modalBG
+    top: 0vh
+    left: 0vw
+    width: 100%
+    height: 100%
+    position: fixed
+    opacity: 0
+    z-index: -1
+    background-color: #000000
+#panTo
+    position: absolute
+    bottom: 10vw
+    left: 10vw
+    z-index: 1
+#searchMap
+    margin-top: 1.56vh
+    position: relative
+    border: 0.3vw solid transparent
+    border-radius: 0.6vw 0 0 0.6vw
+    height: 5.2vh
+    width: 40vw
+    right: 1vw
+    outline: none
+    box-shadow: 0 0.6vw 2vw rgba(0, 0, 0, 0.3)
+    background-color: #fff
+    font-size: 4vw
+    font-weight: 300
+    margin-left: 12px
+    padding: 0 11px 0 13px
+    text-overflow: ellipsis
+    z-index: -1
+#TagPerson, #TagFile, #TagNote
+    background-color: #ffffff
+    height: 70vh
+    width: 80vw
+    left: 10vw
+    top: 12vh
+    z-index: -1
+    position: fixed
+#TagImage
+    background-color: #ffffff
+    height: 28vh
+    width: 100vw
+    left: 0vw
+    top: 28vh
+    z-index: -1
+    position: fixed
+#psCoFileBlockOuter, #fCoFileBlockOuter, #nCoFileBlockOuter
+    overflow: scroll
+    overflow-x: hidden
+    -ms-overflow-y: hidden
+    white-space: nowrap
+    list-style-type: none
+    background: transparent
+    position: relative
+    top: 0vh
+    left: 0vw
+    width: 80vw
+    height: 70vh
+    z-index: -1
+#iCoFileBlockOuter
+    overflow-x: scroll
+    overflow-y: hidden
+    display: inline-block
+    float: left
+    -ms-overflow-y: hidden
+    white-space: nowrap
+    list-style-type: none
+    background: transparent
+    position: relative
+    top: 0vh
+    left: 0vw
+    width: 99.5vw
+    height: 28vh
+    z-index: -1
+#ImageArea
+    position: fixed
+    width: 95vw
+    height: 100%
+    margin: 0 auto
+    z-index: -1
+#showImg
+    max-width: 95vw
+    max-height: 55vh
+    width: auto
+    height: auto
+    position: absolute; 
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    margin: auto
+[contenteditable]
+    border: 1px solid gray
+    position: absolute
+    color: black
+    background-color: #ffffff
+    font-family: Sans-serif
+[contenteditable] #loc, #loc
+    color: green
+    font-family: Sans-serif
+[contenteditable] #ps, #ps
+    color: blue
+    font-family: Sans-serif
+[contenteditable] #file, #file
+    color: orange
+    font-family: Sans-serif
+[contenteditable] #image, #image
+    color: HotPink 
+    font-family: Sans-serif
+[contenteditable] #note, #note
+    color: red
+    font-family: Sans-serif

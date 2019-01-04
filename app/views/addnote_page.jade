@@ -1,0 +1,73 @@
+html
+	head
+		meta(name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0,maximum-scale=1, minimum-scale=1,")
+		link(href='/css/addnote_page.css', rel='stylesheet')
+		script(type='text/javascript', src="/lib/jquery-1.4.2.min.js")
+		script(type='text/javascript', src='/lib/angular/angular.min.js')
+		script(src="https://www.gstatic.com/firebasejs/3.7.2/firebase.js")
+		script(type='text/javascript', src='firebase.js')
+		script(type='text/javascript', src='/canvas_drawing.js')
+		script(type='text/javascript', src='/logout.js')
+		script(type='text/javascript').
+			var user = localStorage.getItem("Username");
+			var status = navigator.onLine;
+			var userRef = firebase.database().ref("User");
+			console.log(status);
+			if(status == 'true') {
+				userRef.orderByChild("UserName").equalTo(user).on('value', function(snapshot) {
+					snapshot.forEach(function (childSnapshot) {
+						userkey = childSnapshot.key;
+						return true;
+				    });
+				    var statusRef = firebase.database().ref("User/"+userkey);
+					statusRef.update({
+						Status: "online"
+					});
+				});
+			} else {
+				userRef.orderByChild("UserName").equalTo(user).on('value', function(snapshot) {
+					snapshot.forEach(function (childSnapshot) {
+						userkey = childSnapshot.key;
+						return true;
+				    });
+				    var statusRef = firebase.database().ref("User/"+userkey);
+					statusRef.update({
+						Status: "offline"
+					});
+				});
+			}
+	body		
+	form(name='addnote', method='POST', action='/addnote_page')
+		ul(class='groupHead')
+			li
+				a(href='/note_page')
+					img(id='goback' src='/img/lessthan.png')
+				h1 Group Name
+		h2 Add note/report
+		//img(id='noteEdit' src='/img/noteEdit.png')
+		div(type='submit' id='newCanvas' onclick='clearCanvas()') 
+			h1 new
+		input(type='button' id='confirmBTN' value='Confirm' onclick='setNoteName()')
+		img(id='green' src='/img/greenPen.png' onclick='changeColorGreen()')
+		img(id='purple' src='/img/purplePen.png' onclick='changeColorPurple()')
+		img(id='blue' src='/img/bluePen.png' onclick='changeColorBlue()')
+		img(id='yellow' src='/img/yellowPen.png' onclick='changeColorYellow()')
+		img(id='orange' src='/img/orangePen.png' onclick='changeColorOrange()')
+		img(id='red' src='/img/redPen.png' onclick='changeColorRed()')
+		img(id='black' src='/img/blackPen.png' onclick='changeColorBlack()')
+		img(id='normalPen' src='/img/pencilHead.png' onclick='changeSizeNormal()')
+		img(id='bigPen' src='/img/pencilHead.png' onclick='changeSizeBig()')
+		img(id='earser' src='/img/earser.png' onclick='Earser()')
+		div(id='toolBar')
+		div(id='pensizeBar')
+		div(id='earserBar')
+		div(id='colorBar')
+		div(id='canvasDiv')
+			div(id='canvasgg')
+				script(type='text/javascript').
+					$(document).ready(function(){prepareCanvas();});
+		div(id='namingModal' class='modal')
+			div(class="modal-content")
+				a Note Name
+				input(id='nName',type='text', placeholder=' Enter your note name')
+				input(type='button' id='selectName' onclick='saveNoteToImg()' value='ok')

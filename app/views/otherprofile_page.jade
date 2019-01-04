@@ -1,0 +1,68 @@
+html
+	head
+		meta(name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0,maximum-scale=1, minimum-scale=1,")
+		link(href='/css/otherprofile_page.css', rel='stylesheet')
+		script(type='text/javascript', src="/lib/jquery-1.4.2.min.js")
+		script(type='text/javascript', src='/lib/angular/angular.min.js')
+		script(src="https://www.gstatic.com/firebasejs/3.7.2/firebase.js")
+		script(type='text/javascript', src='firebase.js')
+		script(type='text/javascript', src='/goPrevious.js')
+		script(type='text/javascript').
+			console.log(localStorage.getItem("Page"));
+			var userRef = firebase.database().ref('User');
+			var userName = localStorage.getItem("otherProfile");
+			console.log(userName);
+
+			userRef.orderByChild('UserName').equalTo(userName).on('child_added', function(snapshot) {
+				var UValue = snapshot.val();
+				console.log(UValue);
+				document.getElementById('nameArea').value = UValue.UserName;
+				document.getElementById('emailArea').value = UValue.Email;
+				document.getElementById('jobArea').value = UValue.JobPosition;
+				document.getElementById('phonenumArea').value = UValue.PhoneNumber;
+				document.getElementById('profileImg').style.backgroundImage = UValue.ProfileImage;
+			});
+			var user = localStorage.getItem("Username");
+			var status = navigator.onLine;
+			var userRef = firebase.database().ref("User");
+			console.log(status);
+			if(status == 'true') {
+				userRef.orderByChild("UserName").equalTo(user).on('value', function(snapshot) {
+					snapshot.forEach(function (childSnapshot) {
+						userkey = childSnapshot.key;
+						return true;
+				    });
+				    var statusRef = firebase.database().ref("User/"+userkey);
+					statusRef.update({
+						Status: "online"
+					});
+				});
+			} else {
+				userRef.orderByChild("UserName").equalTo(user).on('value', function(snapshot) {
+					snapshot.forEach(function (childSnapshot) {
+						userkey = childSnapshot.key;
+						return true;
+				    });
+				    var statusRef = firebase.database().ref("User/"+userkey);
+					statusRef.update({
+						Status: "offline"
+					});
+				});
+			}
+	body		
+	form(name='otherprofile', method='POST', action='/otherprofile_page')
+		ul(class='profileHead')
+			li
+				div(id='goTolastPage' onclick='goLastpage()')
+					img(id='goback' src='/img/lessthan.png')
+				h1 Profile
+		div(id='profileImg')
+		img(id='profileImgs' src='/img/member.png')
+		h2 Name
+			textarea(readonly id='nameArea')
+		h3 Job Position
+			textarea(readonly id='jobArea')
+		h4 Email
+			textarea(readonly id='emailArea')
+		h5 Phone number
+			textarea(readonly id='phonenumArea')

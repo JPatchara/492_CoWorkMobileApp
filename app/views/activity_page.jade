@@ -1,0 +1,46 @@
+html
+	head
+		meta(name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0,maximum-scale=1, minimum-scale=1,")
+		link(href='/css/activity_page.css', rel='stylesheet')
+		script(type='text/javascript', src="/lib/jquery-1.4.2.min.js")
+		script(type='text/javascript', src='/lib/angular/angular.min.js')
+		script(type='text/javascript', src='/goPrevious.js')
+		script(type='text/javascript').
+			var user = localStorage.getItem("Username");
+			var status = navigator.onLine;
+			var userRef = firebase.database().ref("User");
+			console.log(status);
+			if(status == 'true') {
+				userRef.orderByChild("UserName").equalTo(user).on('value', function(snapshot) {
+					snapshot.forEach(function (childSnapshot) {
+						userkey = childSnapshot.key;
+						return true;
+				    });
+				    var statusRef = firebase.database().ref("User/"+userkey);
+					statusRef.update({
+						Status: "online"
+					});
+				});
+			} else {
+				userRef.orderByChild("UserName").equalTo(user).on('value', function(snapshot) {
+					snapshot.forEach(function (childSnapshot) {
+						userkey = childSnapshot.key;
+						return true;
+				    });
+				    var statusRef = firebase.database().ref("User/"+userkey);
+					statusRef.update({
+						Status: "offline"
+					});
+				});
+			}
+	body		
+	form(name='activity', method='POST', action='/activity_page')
+		ul(class='groupHead')
+			li
+				div(id='goTolastPage' onclick='goLastpage()')
+					img(id='goback' src='/img/lessthan.png')
+				h1 Activity
+		li(class='OlderBtn')
+			a Older
+		li(class='NewerBtn')
+			a Newer

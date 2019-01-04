@@ -1,0 +1,361 @@
+body
+    background-color: #ffcc00
+input[type=text] 
+    position: fixed
+    left: 5vw
+    top: 15vh
+    width: 68vw
+    height: 7.5vh
+    box-sizing: border-box
+    border: 0.6vw solid #ccc
+    border-radius: 0.6vw;
+    font-size: 5vw;
+    background-color: white
+    background-image: url('/img/search.png')
+    background-size: 5vw 5vw
+    background-position: 3vw 4vw
+    background-repeat: no-repeat
+    padding: 4vw 2vw 3vw 15vw
+button
+    position: fixed
+    left: 75vw
+    top: 15vh
+    width: 18vw
+    height: 7.5vh
+    box-sizing: border-box
+    border: 0.6vw solid #ccc
+    border-top-right-radius: 3vw
+    border-bottom-right-radius: 3vw
+    background-image: url('/img/addfriend.png')
+    background-size: 12.2vw 12.2vw
+    background-position: 2.5vw 0.6vw
+    background-repeat: no-repeat
+h1
+    color: #000000
+    font-size: 10vw
+    font-family: Calibri
+    margin: 0 auto
+    position: absolute
+    left: 22vw
+    top: 50vh
+ul.tab
+    list-style-type: none
+    position: fixed
+    margin: 0
+    padding: 0
+    top: 0
+    left: 0
+    right: 0
+    width: 100%
+    z-index: 1
+    overflow: hidden
+    border-top: none
+    border-left: none
+    background-color: #ffffff
+ul.tab li 
+    float: left
+ul.tab li a 
+    display: inline-block
+    color: black
+    text-align: center
+    padding: 4.2vw 10.62vw
+    text-decoration: none
+    transition: 0.3s
+.tabcontent 
+    display: none
+    padding: 5vw 5vw
+    border: 1vw solid #FF8C00
+    border-top: none
+ul.member1
+    list-style-type: none
+    position: absolute
+    margin: 0
+    padding: 0
+    top: 28vh
+    left: 5vw
+    right: 0
+    width: 90%
+    height: 12vh
+    z-index: 1
+    overflow: hidden
+    border-top: none
+    border-left: none
+    background-color: transparent
+ul.member1 li
+    float: left
+ul.member1 li a
+    position: absolute
+    font-size: 6vw
+    top: 37%
+    left: 26%
+ul.member1 li img#profile
+    position: absolute
+    top: 20%
+    left: 5%
+    width: 14vw
+    height: 8vh
+ul.member1 li img#status
+    position: absolute
+    top: 45%
+    left: 85%
+    width: 3.6vw
+    height: 2vh
+ul.member2
+    list-style-type: none
+    position: absolute
+    margin: 0
+    padding: 0
+    top: 41vh
+    left: 5vw
+    right: 0
+    width: 90%
+    height: 12vh
+    z-index: 1
+    overflow: hidden
+    border-top: none
+    border-left: none
+    background-color: transparent
+ul.member2 li
+    float: left
+ul.member2 li a
+    position: absolute
+    font-size: 6vw
+    top: 37%
+    left: 26%
+ul.member2 li img#profile
+    position: absolute
+    top: 20%
+    left: 5%
+    width: 14vw
+    height: 8vh
+ul.member2 li img#status
+    position: absolute
+    top: 45%
+    left: 85%
+    width: 3.6vw
+    height: 2vh
+ul.member3
+    list-style-type: none
+    position: absolute
+    margin: 0
+    padding: 0
+    top: 54vh
+    left: 5vw
+    right: 0
+    width: 90%
+    height: 12vh
+    z-index: 1
+    overflow: hidden
+    border-top: none
+    border-left: none
+    background-color: transparent
+ul.member3 li
+    float: left
+ul.member3 li a
+    position: absolute
+    font-size: 6vw
+    top: 37%
+    left: 26%
+ul.member3 li img#profile
+    position: absolute
+    top: 20%
+    left: 5%
+    width: 14vw
+    height: 8vh
+ul.member3 li img#status
+    position: absolute
+    top: 45%
+    left: 85%
+    width: 3.05vw
+    height: 1.65vh
+ul.member4
+    list-style-type: none
+    position: absolute
+    margin: 0
+    padding: 0
+    top: 67vh
+    left: 5vw
+    right: 0
+    width: 90%
+    height: 12vh
+    z-index: 1
+    overflow: hidden
+    border-top: none
+    border-left: none
+    background-color: transparent
+ul.member4 li
+    float: left
+ul.member4 li a
+    position: absolute
+    font-size: 6vw
+    top: 37%
+    left: 26%
+ul.member4 li img#profile
+    position: absolute
+    top: 20%
+    left: 5%
+    width: 14vw
+    height: 8vh
+ul.member4 li img#status
+    position: absolute
+    top: 45%
+    left: 85%
+    width: 3.6vw
+    height: 2vh
+#imgTab
+    width: 12vw
+    height: 7vh
+#memberTab
+    background-color: #ffffff
+.container
+    position: relative
+    background-color: #ffcc00
+    height: 96vh
+    width: 100vw
+    left: 0vw
+    -webkit-transition:  left 0.4s ease-in-out
+    -moz-transition:  left 0.4s ease-in-out
+    -ms-transition:  left 0.4s ease-in-out
+    -o-transition:  left 0.4s ease-in-out
+    transition:  left 0.4s ease-in-out
+.container.open-sidebar 
+    left: 76vw 
+.swipe-area
+    position: absolute
+    width: 5vw
+    left: -2.5vw
+    top: -2vh
+    height: 100vh
+    background: transparent
+    z-index: 2
+#sidebar
+    background: #ffffff
+    position: absolute
+    width: 76vw
+    height: 100vh
+    left: -79vw
+    top: -1.2vh
+    z-index: 2
+    box-sizing: border-box
+    -moz-box-sizing: border-box
+#sidebar ul
+    margin: 0
+    padding: 0
+    list-style: none
+#sidebar ul li
+    margin: 0
+#sidebar ul li a
+    padding: 3.65vw 8vw
+    color: black
+    text-decoration: none
+    display: block
+    border: none
+    -webkit-transition:  background 0.3s ease-in-out
+    -moz-transition:  background 0.3s ease-in-out
+    -ms-transition:  background 0.3s ease-in-out
+    -o-transition:  background 0.3s ease-in-out
+    transition:  background 0.3s ease-in-out
+#sidebar ul li:hover a
+    background: #C9223D
+#sidebar ul li a h1
+    position: relative
+    margin: 0 auto
+    font-family: Calibri
+    font-size: 8vw
+    left: 11vw
+    top: 2.8vh
+    color: #000000
+    max-width: 40vw
+    overflow: hidden
+#sidebar ul li a h2
+    position: relative
+    margin: 0 auto
+    font-family: Calibri
+    font-size: 6vw
+    left: 10vw
+    top: 1.6vh
+    color: #000000
+#sidebar ul li a h3
+    position: relative
+    margin: 0 auto
+    font-family: Calibri
+    font-size: 6vw
+    left: 11vw
+    top: 4.5vh
+    color: #000000
+#profile
+    position: relative
+    top: -5vh
+    width: 18vw
+    height: 10vh
+#profileImg
+    position: relative
+    top: -5vh
+    width: 18vw
+    height: 10vh
+    z-index: 1
+    border: none
+    border-radius: 50vw
+    background-image: url('')
+    background-size: cover
+    background-position: center
+    border: 0.3vw solid #bbb
+    border-radius: 50vw
+#actIcon
+    position: relative
+    top: -2.5vh
+    left: -1.4vw
+    width: 7.5vw
+    height: 4.1vh
+#setIcon
+    position: relative
+    top: -2.5vh
+    left: -1.4vw
+    width: 7.5vw
+    height: 4.1vh
+#aboutIcon
+    position: relative
+    top: -2.5vh
+    left: -1.4vw
+    width: 7.5vw
+    height: 4.1vh
+#helpIcon
+    position: relative
+    top: -2.5vh
+    left: -1.4vw
+    width: 7.5vw
+    height: 4.1vh
+#logoutIcon
+    position: relative
+    top: -2.5vh
+    left: -1.4vw
+    width: 7.5vw
+    height: 4.4vh
+#exitIcon
+    position: relative
+    top: -0.5vh
+    left: -3.5vw
+    width: 11vw
+    height: 6vh
+#header
+    height: 19.5vh
+    border-bottom: 0.3vw solid #000000
+#beforeFooter
+    border: none
+    height: 5vh
+#footer
+    height: 12.5vh
+    border-top: 0.3vw solid #000000
+#memberOuter
+    overflow: scroll
+    overflow-x: hidden
+    -ms-overflow-y: hidden
+    white-space: nowrap
+    list-style-type: none
+    background: transparent
+    position: fixed
+    top: 25vh
+    left: 5vw
+    width: 90vw
+    height: 70vh
+    z-index: 1

@@ -1,0 +1,30 @@
+html
+	head
+		meta(name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0,maximum-scale=1, minimum-scale=1,")
+		link(href='/css/login_page.css', rel='stylesheet')
+		script(type='text/javascript', src="/lib/jquery-1.4.2.min.js")
+		script(type='text/javascript', src='/lib/angular/angular.min.js')
+		script(src="https://www.gstatic.com/firebasejs/3.7.2/firebase.js")
+		script(type='text/javascript', src='/firebase.js')
+		script(type='text/javascript', src='/user_login.js')
+		script(type='text/javascript', src='/fbAuthen.js')
+	body(background='/img/login_page_wallpaper.jpg')
+		h1 LOGIN
+		form(name='login', method='POST', action='/login_page')
+			div(id='usernameBox')
+				label(for='username') Username <br>
+				input(id='username', name='username', type='text', placeholder=' username')
+			div(id='passwordBox') 
+				label(for='password') Password <br>
+				input(id='password', name='password', type='password', placeholder=' password')
+			div(id='rememberMe') 
+				input(name='remember', type='checkbox', value='remember') 
+				| Remember Me
+			div
+				input(id='loginBTN', value='Login' ,onclick='LoggedIn()')
+			div(id='facebookLogin')
+				img(id='fblogo', src='/img/fb_logo.jpg')
+				a(onclick="facebookSignin()") Login with Facebook
+				//a(href='/auth/facebook') Login with Facebook
+			div(id='signupLink')
+				a(href='/signup_page') Sign up now

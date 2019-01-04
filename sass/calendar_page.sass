@@ -1,0 +1,321 @@
+body
+    background-color: #ffcc00
+    font-family: Verdana,sans-serif
+ul 
+    list-style-type: none
+h1
+    color: #000000
+    font-size: 10vw
+    font-family: Calibri
+    margin: 0 auto
+    position: absolute
+    left: 21vw
+    top: 50vh
+h2
+    color: #000000
+    font-size: 7vw
+    font-family: Calibri
+    margin: 0 auto
+    position: fixed
+    left: 8vw
+    top: 15vh
+ul.tab
+    list-style-type: none
+    position: fixed
+    margin: 0
+    padding: 0
+    top: 0
+    left: 0
+    right: 0
+    width: 100%
+    z-index: 1
+    overflow: hidden
+    border-top: none
+    border-left: none
+    background-color: #ffffff
+ul.tab li 
+    float: left
+ul.tab li a 
+    display: inline-block
+    color: black
+    text-align: center
+    padding: 4.2vw 10.62vw
+    text-decoration: none
+    transition: 0.3s
+.tabcontent 
+    display: none
+    padding: 5vw 5vw
+    border: 1vw solid #FF8C00
+    border-top: none
+#imgTab
+    width: 12vw
+    height: 7vh
+#calendarTab
+    background-color: #ffffff
+.today
+    position: fixed
+    list-style-type: none
+    background-color: #ffffff
+    border: 0.4vw solid #B0B0B0
+    top: 15vh
+    left: 52vw
+    width: 18vw
+    height: 4vh
+.today a
+    position: relative
+    margin: 0 auto
+    text-decoration: none
+    text-align: center
+    font-family: Calibri
+    font-size: 5vw
+    font-weight: bold
+    left: 3vw
+    top: 0.1vh
+    color: #FF4500
+.addAct
+    position: fixed
+    list-style-type: none
+    background-color: #ffffff
+    border: 0.4vw solid #B0B0B0
+    top: 15vh
+    left: 74vw
+    width: 18vw
+    height: 4vh
+.addAct a
+    position: relative
+    margin: 0 auto
+    text-decoration: none
+    text-align: center
+    font-size: 8vw
+    font-weight: bold
+    left: 5.3vw
+    top: -1.2vh
+    color: #FF4500
+.calendar
+    position: fixed
+    top: 22vh
+    left: 0
+    height: 65vh
+.cal_calendar
+    border: 0.3vw solid black
+    padding: 0.3vw
+    background-color: #228B22
+    color: #000000
+    width: 100%
+    margin: auto
+    height: 60vh
+.cal_calendar th
+    border: 0.3vw solid black
+    background-color: #90EE90
+    color: #000000
+    width: 15vw
+    height: 5vh;
+.cal_calendar td
+    border: 0.3vw solid black
+    background-color: #ffffff
+    text-align: center
+    width: 10vw
+    height: 4vh
+.cal_today
+    background-color: #ffc04c !important
+    color: #e50505
+    font-weight: bold
+.cal_days_bef_aft
+    color: #0028f0
+.container
+    position: relative
+    background-color: #ffcc00
+    height: 96vh
+    width: 100vw
+    left: 0vw
+    -webkit-transition:  left 0.4s ease-in-out
+    -moz-transition:  left 0.4s ease-in-out
+    -ms-transition:  left 0.4s ease-in-out
+    -o-transition:  left 0.4s ease-in-out
+    transition:  left 0.4s ease-in-out
+.container.open-sidebar 
+    left: 76vw 
+.swipe-area
+    position: absolute
+    width: 5vw
+    left: -2.5vw
+    top: -2vh
+    height: 100vh
+    background: transparent
+    z-index: 2
+#sidebar
+    background: #ffffff
+    position: absolute
+    width: 76vw
+    height: 100vh
+    left: -79vw
+    top: -1.2vh
+    z-index: 2
+    box-sizing: border-box
+    -moz-box-sizing: border-box
+#sidebar ul
+    margin: 0
+    padding: 0
+    list-style: none
+#sidebar ul li
+    margin: 0
+#sidebar ul li a
+    padding: 3.65vw 8vw
+    color: black
+    text-decoration: none
+    display: block
+    border: none
+    -webkit-transition:  background 0.3s ease-in-out
+    -moz-transition:  background 0.3s ease-in-out
+    -ms-transition:  background 0.3s ease-in-out
+    -o-transition:  background 0.3s ease-in-out
+    transition:  background 0.3s ease-in-out
+#sidebar ul li:hover a
+    background: #C9223D
+#sidebar ul li a h1
+    position: relative
+    margin: 0 auto
+    font-family: Calibri
+    font-size: 8vw
+    left: 11vw
+    top: 2.8vh
+    color: #000000
+    max-width: 40vw
+    overflow: hidden
+#sidebar ul li a h2
+    position: relative
+    margin: 0 auto
+    font-family: Calibri
+    font-size: 6vw
+    left: 10vw
+    top: 1.6vh
+    color: #000000
+#sidebar ul li a h3
+    position: relative
+    margin: 0 auto
+    font-family: Calibri
+    font-size: 6vw
+    left: 11vw
+    top: 4.5vh
+    color: #000000
+#profile
+    position: relative
+    top: -5vh
+    width: 18vw
+    height: 10vh
+#profileImg
+    position: relative
+    top: -5vh
+    width: 18vw
+    height: 10vh
+    z-index: 1
+    border: none
+    border-radius: 50vw
+    background-image: url('')
+    background-size: cover
+    background-position: center
+    border: 0.3vw solid #bbb
+    border-radius: 50vw
+#actIcon
+    position: relative
+    top: -2.5vh
+    left: -1.4vw
+    width: 7.5vw
+    height: 4.1vh
+#setIcon
+    position: relative
+    top: -2.5vh
+    left: -1.4vw
+    width: 7.5vw
+    height: 4.1vh
+#aboutIcon
+    position: relative
+    top: -2.5vh
+    left: -1.4vw
+    width: 7.5vw
+    height: 4.1vh
+#helpIcon
+    position: relative
+    top: -2.5vh
+    left: -1.4vw
+    width: 7.5vw
+    height: 4.1vh
+#logoutIcon
+    position: relative
+    top: -2.5vh
+    left: -1.4vw
+    width: 7.5vw
+    height: 4.4vh
+#exitIcon
+    position: relative
+    top: -0.5vh
+    left: -3.5vw
+    width: 11vw
+    height: 6vh
+#header
+    height: 19.5vh
+    border-bottom: 0.3vw solid #000000
+#beforeFooter
+    border: none
+    height: 5vh
+#footer
+    height: 12.5vh
+    border-top: 0.3vw solid #000000
+
+// .month
+//     padding: 70px 25px
+//     width: 100%
+//     background: #1abc9c
+// .month ul 
+//     margin: 0
+//     padding: 0
+// .month ul li
+//     color: white
+//     font-size: 20px
+//     text-transform: uppercase
+//     letter-spacing: 3px
+//     text-decoration: none
+// .month .prev
+//     float: left
+//     padding-top: 10px
+// .month .next
+//     float: right
+//     padding-top: 10px
+// .weekdays
+//     margin: 0
+//     padding: 10px 0
+//     height: 5vh
+//     background-color: #ddd
+// .weekdays li
+//     display: inline-block
+//     position: relative
+//     top: 0.8vh
+//     left: 2.2vw;
+//     width: 13.6%
+//     color: #666
+//     text-align: center
+//     font-weight: bold
+//     text-decoration: none
+// .days
+//     padding: 10px 0
+//     height: 52vh
+//     background: #eee
+//     margin: 0
+// .days li
+//     list-style-type: none
+//     display: inline-block
+//     position: relative
+//     left: 2.2vw;
+//     top: 1vh
+//     width: 13.6%
+//     height: 10.5vh;
+//     text-align: center
+//     margin-bottom: 5px
+//     font-size: 5vw
+//     color: #777
+//     text-decoration: none
+// .days li .active
+//     padding: 5px
+//     background: #0000CD
+//     text-decoration: none
+//     color: white !important

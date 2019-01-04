@@ -1,0 +1,21 @@
+html
+	head
+		meta(name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0,maximum-scale=1, minimum-scale=1,")
+		link(href='/css/Cofunction.css', rel='stylesheet')
+		script(type='text/javascript', src='/lib/angular/angular.min.js')
+		script(type='text/javascript', src="/lib/jquery-1.4.2.min.js")
+		script(type="text/javascript", src="/lib/jquery.touchSwipe.min.js")
+		script(src="https://www.gstatic.com/firebasejs/3.7.2/firebase.js")
+		script(type='text/javascript', src='firebase.js')
+		script(type='text/javascript', src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyAaWrl60y9TaLrlteFd9ERgOCHSyq6uydA")
+		script(type='text/javascript', src='/Cofunction.js')
+	body		
+	form(name='Cofunction', method='POST', action='/Cofunction')
+		div(contenteditable='true', id='TBox',onchange='LocationCoFunc()',onkeydown='LocationCoFunc()',onkeypress='LocationCoFunc()',oninput='LocationCoFunc()')
+		section(class="mdl-layout__tab-panel" id="maps")
+			div(id="p2" class="mdl-progress mdl-js-progress mdl-progress__indeterminate")
+			input(type="text" id="searchMap" placeholder="Search Map")
+			div(class="mdl-content" id="map_canvas" style='height:70vh,width:80vw')
+			//button(onclick="panTo()" class="mdl-button mdl-js-button mdl-button--fab mdl-color--accent mdl-js-ripple-effect mdl-color-text--white", value = 'mylocation') 
+			div(id='BTN', onclick='AddLocationtoText()')
+	div(id='modalBG')

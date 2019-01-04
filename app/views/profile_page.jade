@@ -1,0 +1,58 @@
+html
+	head
+		meta(name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0,maximum-scale=1, minimum-scale=1,")
+		link(href='/css/profile_page.css', rel='stylesheet')
+		script(type='text/javascript', src="/lib/jquery-1.4.2.min.js")
+		script(type='text/javascript', src='/lib/angular/angular.min.js')
+		script(src="https://www.gstatic.com/firebasejs/3.7.2/firebase.js")
+		script(type='text/javascript', src='firebase.js')
+		script(type='text/javascript', src='/Profile.js')
+		script(type='text/javascript', src='/goPrevious.js')
+		script(type='text/javascript').
+			var user = localStorage.getItem("Username");
+			var status = navigator.onLine;
+			var userRef = firebase.database().ref("User");
+			console.log(status);
+			if(status == 'true') {
+				userRef.orderByChild("UserName").equalTo(user).on('value', function(snapshot) {
+					snapshot.forEach(function (childSnapshot) {
+						userkey = childSnapshot.key;
+						return true;
+				    });
+				    var statusRef = firebase.database().ref("User/"+userkey);
+					statusRef.update({
+						Status: "online"
+					});
+				});
+			} else {
+				userRef.orderByChild("UserName").equalTo(user).on('value', function(snapshot) {
+					snapshot.forEach(function (childSnapshot) {
+						userkey = childSnapshot.key;
+						return true;
+				    });
+				    var statusRef = firebase.database().ref("User/"+userkey);
+					statusRef.update({
+						Status: "offline"
+					});
+				});
+			}
+	body		
+	form(name='profile', method='POST', action='/profile_page')
+		ul(class='profileHead')
+			li
+				div(id='goTolastPage' onclick='goLastpage()')
+					img(id='goback' src='/img/lessthan.png')
+				h1 Profile
+		div(id='profileImg')
+		input(id='clickPF' type='file')
+		img(id='profileImgs' src='/img/member.png')
+		h2 Name
+			textarea(readonly id='nameArea')
+		h3 Job Position
+			textarea(readonly id='jobArea')
+		h4 Email
+			textarea(readonly id='emailArea')
+		h5 Phone number
+			textarea(readonly id='phonenumArea')
+		input(type='button' id='editBTN' onclick='EditProfile()' value='Edit')
+		input(type='button' id='saveBTN' onclick='SaveProfile()' value='Save')

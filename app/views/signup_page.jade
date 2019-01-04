@@ -1,0 +1,29 @@
+html
+	head
+		meta(name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0,maximum-scale=1, minimum-scale=1,")
+		link(href='/css/signup_page.css', rel='stylesheet')
+		script(type='text/javascript', src="/lib/jquery-1.4.2.min.js")
+		script(type='text/javascript', src='/lib/angular/angular.min.js')
+		script(src="https://www.gstatic.com/firebasejs/3.7.2/firebase.js")
+		script(type='text/javascript', src='firebase.js')
+		script(type='text/javascript', src='/user_login.js')
+	body(background='/img/login_page_wallpaper.jpg')
+		h1 SIGN UP
+		form(name='signup', method='POST', action='/signup_page')
+			div(id='usernameBox')
+				label(for='username') Username <br>
+				input(id='userName', name='username', type='text', placeholder=' username')
+			div(id='firstnameBox')
+				label(for='firstname') Firstname <br>
+				input(id='firstName', name='firstname', type='text', placeholder=' Firstname')
+			div(id='lastnameBox')
+				label(for='lastname') Lastname <br>
+				input(id='lastName', name='lastname', type='text', placeholder=' Lastname')
+			div(id='emailBox')
+				label(for='email') Email <br>
+				input(id='email', name='email', type='email', placeholder=' youremail@email.com')
+			div(id='passwordBox') 
+				label(for='password') Password <br>
+				input(id='password', name='password', type='password', placeholder=' password')
+			div
+				input(id='signupBTN', value='Sign up', onclick='saveOnclick()')
